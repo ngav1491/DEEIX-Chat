@@ -1,15 +1,18 @@
 import enErrors from "@/i18n/messages/en-US/errors.json";
+import viErrors from "@/i18n/messages/vi-VN/errors.json";
 import zhErrors from "@/i18n/messages/zh-CN/errors.json";
 import { DEFAULT_LOCALE, LOCALE_COOKIE_NAME, normalizeAppLocale, resolveBrowserLocale, type AppLocale } from "@/i18n/config";
 import { ApiError } from "@/shared/api/http-client";
 
 const ERROR_MESSAGES: Record<AppLocale, unknown> = {
   "en-US": enErrors,
+  "vi-VN": viErrors,
   "zh-CN": zhErrors,
 };
 
 const FALLBACK_MESSAGES: Record<AppLocale, string> = {
   "en-US": "Request failed. Please try again later.",
+  "vi-VN": "Yêu cầu thất bại. Vui lòng thử lại sau.",
   "zh-CN": "请求失败，请稍后重试。",
 };
 
@@ -92,6 +95,35 @@ const REQUEST_FIELD_LABELS: Record<AppLocale, Record<string, string>> = {
     subscriptionTier: "订阅方案",
     timezone: "时区",
     username: "用户名",
+  },
+  "vi-VN": {
+    apiKeys: "API keys",
+    avatarURL: "URL ảnh đại diện",
+    baseURL: "Base URL",
+    cbDurationMin: "Thời gian ngắt mạch",
+    cbFailureThreshold: "Ngưỡng lỗi",
+    cbModelThreshold: "Ngưỡng theo model",
+    cbThresholdLogic: "Logic ngưỡng",
+    cbWindowMin: "Cửa sổ thống kê",
+    compatible: "Chế độ tương thích",
+    connectTimeoutMS: "Timeout kết nối",
+    displayName: "Tên hiển thị",
+    email: "Email",
+    headersJSON: "Headers JSON",
+    locale: "Ngôn ngữ",
+    maskFileID: "Tệp mặt nạ",
+    name: "Tên",
+    password: "Mật khẩu",
+    phone: "Số điện thoại",
+    protocolDefaultsJSON: "Cấu hình mặc định giao thức (JSON)",
+    readTimeoutMS: "Timeout đọc",
+    status: "Trạng thái",
+    systemPrompt: "System prompt",
+    streamIdleTimeoutMS: "Timeout idle của stream",
+    subscriptionExpiresAt: "Hạn gói đăng ký",
+    subscriptionTier: "Gói đăng ký",
+    timezone: "Múi giờ",
+    username: "Tên người dùng",
   },
 };
 
@@ -192,6 +224,54 @@ const SETTINGS_FIELD_LABELS: Record<AppLocale, Record<string, string>> = {
     "file:full_context_pdf_max_pages": "全文页数上限",
     "mcp:mcp_enable": "MCP",
   },
+  "vi-VN": {
+    "auth:auto_link_verified_email": "Tự liên kết email trùng khớp",
+    "auth:email_login_enabled": "Đăng nhập bằng email",
+    "auth:email_registration_allowed_domains": "Tên miền email được phép đăng ký",
+    "auth:email_registration_block_plus_alias": "Chặn email dạng +alias",
+    "auth:email_registration_enabled": "Đăng ký bằng email",
+    "auth:email_verification_enabled": "Xác thực email",
+    "auth:password_reset_enabled": "Đặt lại mật khẩu",
+    "auth:login_default_next_path": "Đường dẫn chuyển hướng mặc định sau đăng nhập",
+    "auth:login_lock_minutes": "Thời gian khóa",
+    "auth:login_max_failures": "Giới hạn số lần đăng nhập sai",
+    "auth:rate_limit_enabled": "Giới hạn tốc độ toàn nền tảng",
+    "auth:rate_limit_rpm": "Giới hạn tốc độ API người dùng",
+    "auth:public_auth_rate_limit_rpm": "Giới hạn tốc độ xác thực công khai",
+    "auth:refresh_token_ttl_hours": "Thời hạn refresh token",
+    "auth:smtp_from": "Địa chỉ gửi SMTP",
+    "auth:smtp_host": "Máy chủ SMTP",
+    "auth:smtp_password": "Mật khẩu SMTP",
+    "auth:smtp_port": "Cổng SMTP",
+    "auth:smtp_username": "Tên người dùng SMTP",
+    "auth:third_party_login_enabled": "Đăng nhập bên thứ ba",
+    "auth:token_ttl_hours": "Thời hạn access token",
+    "auth:turnstile_registration_enabled": "Xác minh người dùng khi đăng ký",
+    "auth:turnstile_secret_key": "Turnstile Secret Key",
+    "auth:turnstile_site_key": "Turnstile Site Key",
+    "auth:username_login_enabled": "Đăng nhập bằng tên người dùng",
+    "billing:epay_gateway_url": "Địa chỉ cổng EPay",
+    "billing:epay_key": "Khóa merchant EPay",
+    "billing:epay_pid": "Mã merchant EPay",
+    "billing:epay_types": "Phương thức thanh toán EPay",
+    "billing:mode": "Chế độ tính phí",
+    "billing:payment_providers": "Kênh thanh toán",
+    "billing:prepaid_amount_usd": "Số tiền đặt trước mỗi yêu cầu",
+    "billing:stripe_publishable_key": "Stripe Publishable Key",
+    "billing:stripe_secret_key": "Stripe Secret Key",
+    "billing:stripe_webhook_secret": "Stripe Webhook Secret",
+    "billing:usd_to_cny_rate": "Tỷ giá USD sang CNY",
+    "chat:model_option_allowed_paths": "Danh sách trắng tham số model",
+    "chat:default_system_prompt": "System prompt mặc định toàn cục",
+    "chat:model_option_denied_paths": "Danh sách đen tham số model",
+    "chat:model_option_policy_mode": "Chính sách truyền tham số model",
+    "file:embedding_enabled": "Dịch vụ embedding",
+    "file:full_context_limit_enabled": "Giới hạn chèn toàn văn",
+    "file:file_full_context_max_bytes": "Giới hạn dung lượng toàn văn",
+    "file:full_context_max_tokens": "Giới hạn token toàn văn",
+    "file:full_context_pdf_max_pages": "Giới hạn số trang toàn văn",
+    "mcp:mcp_enable": "MCP",
+  },
 };
 
 export function toErrorMessagePath(errorCode: string): string[] {
@@ -253,6 +333,27 @@ function resolveRequestFieldError(locale: AppLocale, item: RequestBodyFieldError
   if (!field || !rule) return undefined;
 
   const label = resolveRequestFieldLabel(locale, field);
+  if (locale === "vi-VN") {
+    switch (rule) {
+      case "required":
+      case "required_without":
+        return `${label} không được để trống.`;
+      case "min":
+        return `${label} phải có ít nhất ${param} ký tự.`;
+      case "max":
+        return `${label} không được vượt quá ${param} ký tự.`;
+      case "len":
+        return `${label} phải có đúng ${param} ký tự.`;
+      case "email":
+        return `${label} không đúng định dạng.`;
+      case "url":
+        return `${label} phải là URL đầy đủ, ví dụ https://api.example.com.`;
+      case "oneof":
+        return `${label} phải là một trong các giá trị: ${param}.`;
+      default:
+        return `${label} không hợp lệ.`;
+    }
+  }
   if (locale === "zh-CN") {
     switch (rule) {
       case "required":
@@ -329,9 +430,100 @@ function resolveSettingsValidationMessage(error: ApiError, locale: AppLocale): s
     ? error.details.fields.filter((value): value is string => typeof value === "string" && value.trim().length > 0).map((value) => value.trim())
     : [];
   const param = typeof error.details.param === "string" ? error.details.param.trim() : "";
-  const label = field ? resolveSettingsFieldLabel(locale, field) : fields.map((value) => resolveSettingsFieldLabel(locale, value)).join(locale === "zh-CN" ? "、" : ", ");
-  const displayLabel = label || (locale === "zh-CN" ? "设置项" : "Setting");
+  const label = field
+    ? resolveSettingsFieldLabel(locale, field)
+    : fields.map((value) => resolveSettingsFieldLabel(locale, value)).join(locale === "zh-CN" ? "、" : ", ");
+  const displayLabel = label || (locale === "zh-CN" ? "设置项" : locale === "vi-VN" ? "Cài đặt" : "Setting");
   const [first, second] = splitRuleParam(param);
+
+  if (locale === "vi-VN") {
+    switch (rule) {
+      case "required":
+        return `${displayLabel} không được để trống.`;
+      case "required_when":
+        return `${displayLabel} không được để trống khi ${param}.`;
+      case "required_together":
+        return `${displayLabel} không được để trống.`;
+      case "bool":
+        return `${displayLabel} phải là true hoặc false.`;
+      case "integer":
+        return `${displayLabel} phải là số nguyên.`;
+      case "integer_range":
+        return `${displayLabel} phải là số nguyên từ ${first} đến ${second}.`;
+      case "optional_integer_range":
+        return `${displayLabel} phải để trống, bằng 0, hoặc trong khoảng ${first} đến ${second}.`;
+      case "integer_min":
+        return `${displayLabel} phải lớn hơn hoặc bằng ${param}.`;
+      case "optional_integer_min":
+        return `${displayLabel} phải để trống, hoặc lớn hơn hoặc bằng ${param}.`;
+      case "float_range":
+        return `${displayLabel} phải trong khoảng ${first} đến ${second}.`;
+      case "max_length":
+        return `${displayLabel} không được vượt quá ${param} ký tự.`;
+      case "enum":
+        return `${displayLabel} phải là một trong các giá trị: ${splitRuleParam(param).join(", ")}.`;
+      case "payment_provider":
+        return `${displayLabel} chỉ được chứa: ${splitRuleParam(param).join(", ")}.`;
+      case "http_url":
+        return `${displayLabel} phải bắt đầu bằng http:// hoặc https://.`;
+      case "trusted_http_url":
+        return `${displayLabel} phải là địa chỉ HTTP đáng tin cậy.`;
+      case "local_path":
+        return `${displayLabel} phải là đường dẫn nội bộ, ví dụ /chat.`;
+      case "json_object":
+        return `${displayLabel} phải là đối tượng JSON.`;
+      case "json_array":
+        return `${displayLabel} phải là mảng JSON.`;
+      case "payment_count":
+        return `${displayLabel} phải chứa từ ${first} đến ${second} phương thức thanh toán.`;
+      case "payment_fields":
+        return `Mỗi mục ${displayLabel} phải gồm ${param}.`;
+      case "payment_item_length":
+        return `${displayLabel} chứa một phần tử quá dài.`;
+      case "payment_type_chars":
+        return `${displayLabel} chứa ký tự type không hợp lệ.`;
+      case "payment_type_unique":
+        return `Giá trị type của ${displayLabel} không được trùng lặp.`;
+      case "model_option_protocol":
+        return `${displayLabel} chứa giao thức không được hỗ trợ.`;
+      case "model_option_path":
+        return `${displayLabel} chứa đường dẫn tham số không hợp lệ.`;
+      case "native_tool_pricing":
+        return `${displayLabel} chứa cấu hình tính phí công cụ gốc không hợp lệ.`;
+      case "mime":
+        return `${displayLabel} chứa kiểu MIME không hợp lệ.`;
+      case "file_type":
+        return `${displayLabel} chỉ được chứa: ${splitRuleParam(param).join(", ")}.`;
+      case "domain":
+        return `${displayLabel} chứa tên miền không hợp lệ.`;
+      case "epay_url":
+        return `${displayLabel} phải là URL EPay HTTP(S) hợp lệ.`;
+      case "dependency":
+        if (param === "username_or_email_login") {
+          return "Phải bật đăng nhập bên thứ ba trước khi tắt đăng nhập bằng tên người dùng và email.";
+        }
+        if (param === "superadmin_identity") {
+          return "Phải gắn danh tính quản trị viên trước khi bật đăng nhập bên thứ ba.";
+        }
+        if (param === "embedding_service_ready") {
+          return "Phải cấu hình và bật dịch vụ embedding trước khi bật vector hóa.";
+        }
+        if (param === "vector_store_available") {
+          return "Phải cấu hình kho vector khả dụng trước khi bật vector hóa.";
+        }
+        return `${displayLabel} chưa thỏa điều kiện phụ thuộc.`;
+      case "clear_not_allowed":
+        return `${displayLabel} không hỗ trợ xóa trống.`;
+      case "invalid_namespace":
+        return "Không gian tên cài đặt không hợp lệ.";
+      case "invalid_key":
+        return "Khóa cài đặt không hợp lệ.";
+      case "invalid_value":
+        return "Giá trị cài đặt không hợp lệ.";
+      default:
+        return `${displayLabel} không hợp lệ.`;
+    }
+  }
 
   if (locale === "zh-CN") {
     switch (rule) {
