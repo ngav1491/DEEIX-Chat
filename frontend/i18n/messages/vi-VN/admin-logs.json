@@ -1,124 +1,6 @@
 {
   "title": "Nhật ký",
   "centerTitle": "Trung tâm nhật ký",
-  "audit": "Kiểm toán thao tác",
-  "usage": "Lượt gọi model",
-  "system": "Sự kiện hệ thống",
-  "tabs": {
-    "audit": "Kiểm toán thao tác",
-    "usage": "Lượt gọi model",
-    "auth": "Bảo mật đăng nhập",
-    "orders": "Hồ sơ đơn hàng",
-    "conversation": "Sự kiện hội thoại",
-    "moderation": "Sự kiện kiểm duyệt",
-    "system": "Sự kiện hệ thống"
-  },
-  "cleanup": {
-    "trigger": "Dọn dẹp nhật ký",
-    "title": "Dọn dẹp nhật ký lịch sử",
-    "description": "Dữ liệu trước 00:00 của ngày đã chọn sẽ bị xóa vĩnh viễn. Hành động này không thể hoàn tác.",
-    "typeLabel": "Loại nhật ký",
-    "dateLabel": "Ngày cắt",
-    "datePlaceholder": "Chọn một ngày",
-    "impactTitle": "Tác động",
-    "highRisk": "Rủi ro cao",
-    "boundary": "Dữ liệu trước {date} 00:00 sẽ bị xóa. Dữ liệu từ ngày đã chọn không bị ảnh hưởng.",
-    "confirm": "Dọn dẹp",
-    "deleting": "Đang dọn dẹp",
-    "types": {
-      "audit": "Kiểm toán thao tác",
-      "auth": "Bảo mật đăng nhập",
-      "usage": "Lượt gọi model",
-      "orders": "Hồ sơ đơn hàng",
-      "conversation": "Sự kiện hội thoại",
-      "system": "Sự kiện hệ thống"
-    },
-    "impacts": {
-      "audit": "Chỉ xóa các bản ghi theo dõi thao tác. Người dùng, hội thoại và dữ liệu nghiệp vụ khác không bị xóa.",
-      "auth": "Xóa lịch sử sự kiện đăng nhập, xác thực hai yếu tố, mật khẩu và các sự kiện bảo mật khác. Các phiên đang hoạt động và thông tin xác thực không bị thay đổi.",
-      "usage": "Xóa sổ ghi mức sử dụng và chi phí. Mức sử dụng theo ngày/tháng trong quá khứ, tính toán hạn mức chu kỳ hiện tại và khả năng truy vết thanh toán bị ảnh hưởng, và các khoảng thời gian đã xóa có thể hiển thị hạn mức tiêu thụ thấp hơn.",
-      "orders": "Xóa đơn hàng thanh toán và dữ liệu đối chiếu callback. Số dư và gói đăng ký đã cấp không bị thu hồi, nhưng các callback cũ có thể lỗi và khả năng truy vết thanh toán cùng bằng chứng idempotency bị mất.",
-      "conversation": "Xóa dấu vết xử lý tin nhắn, lệnh gọi công cụ và sự kiện chạy. Hội thoại và nội dung tin nhắn được giữ lại, nhưng chi tiết xử lý và công cụ trong quá khứ có thể không còn hiển thị.",
-      "system": "Xóa các sự kiện chẩn đoán và xử lý sự cố. Cấu hình hệ thống và trạng thái vận hành hiện tại không bị thay đổi."
-    },
-    "toast": {
-      "sessionExpired": "Phiên đăng nhập đã hết hạn",
-      "signInAgain": "Vui lòng đăng nhập lại trước khi tiếp tục.",
-      "success": "Dọn dẹp nhật ký hoàn tất. Đã xóa {count} bản ghi",
-      "failed": "Dọn dẹp nhật ký thất bại"
-    }
-  },
-  "toast": {
-    "sessionExpired": "Phiên đăng nhập đã hết hạn",
-    "signInAgain": "Vui lòng đăng nhập lại trước khi tiếp tục.",
-    "auditLoadFailed": "Tải nhật ký kiểm toán thất bại",
-    "authLoadFailed": "Tải nhật ký bảo mật đăng nhập thất bại",
-    "systemLoadFailed": "Tải sự kiện hệ thống thất bại",
-    "usageLoadFailed": "Tải nhật ký sử dụng thất bại",
-    "ordersLoadFailed": "Tải hồ sơ đơn hàng thất bại",
-    "conversationEventsLoadFailed": "Tải sự kiện hội thoại thất bại",
-    "conversationEventDetailLoadFailed": "Tải chi tiết sự kiện hội thoại thất bại",
-    "modelFilterLoadFailed": "Tải bộ lọc model thất bại"
-  },
-  "sort": {
-    "idDesc": "ID mới nhất trước",
-    "idAsc": "ID cũ nhất trước",
-    "createdDesc": "Tạo mới nhất trước",
-    "createdAsc": "Tạo cũ nhất trước",
-    "occurredDesc": "Xảy ra mới nhất trước",
-    "occurredAsc": "Xảy ra cũ nhất trước",
-    "callTimeDesc": "Thời điểm gọi mới nhất trước",
-    "callTimeAsc": "Thời điểm gọi cũ nhất trước",
-    "costDesc": "Chi phí giảm dần",
-    "tokensDesc": "Token giảm dần",
-    "latencyDesc": "Độ trễ giảm dần",
-    "paidDesc": "Thanh toán mới nhất trước",
-    "amountDesc": "Số tiền giảm dần",
-    "sequenceAsc": "Trình tự sự kiện cũ nhất trước"
-  },
-  "filters": {
-    "allResources": "Tất cả",
-    "allActions": "Tất cả",
-    "allSources": "Tất cả",
-    "allEvents": "Tất cả",
-    "allResults": "Tất cả",
-    "allLevels": "Tất cả",
-    "timeRange": "Khoảng thời gian",
-    "levels": {
-      "info": "Thông tin",
-      "warn": "Cảnh báo",
-      "error": "Lỗi"
-    }
-  },
-  "columns": {
-    "actor": "Đối tượng thực hiện",
-    "action": "Hành động",
-    "resource": "Tài nguyên",
-    "time": "Thời gian",
-    "requestID": "Request ID",
-    "user": "Người dùng",
-    "event": "Sự kiện",
-    "result": "Kết quả",
-    "reason": "Lý do",
-    "level": "Mức",
-    "source": "Nguồn",
-    "message": "Thông điệp",
-    "caller": "Bên gọi",
-    "model": "Model",
-    "usage": "Sử dụng",
-    "billing": "Thanh toán",
-    "balanceAfter": "Số dư sau tất toán",
-    "latency": "Độ trễ",
-    "orderNo": "Số đơn hàng",
-    "type": "Loại",
-    "provider": "Nhà cung cấp",
-    "status": "Trạng thái",
-    "upstream": "Upstream",
-    "amount": "Số tiền",
-    "scope": "Phạm vi",
-    "tool": "Công cụ",
-    "runID": "Run ID"
-  },
   "audit": {
     "searchPlaceholder": "Tìm kiếm ID người dùng, hành động, tài nguyên, request ID, IP hoặc chi tiết",
     "empty": "Không có nhật ký kiểm toán nào",
@@ -172,14 +54,6 @@
       "admin_cleanup_logs": "Quản trị viên dọn dẹp nhật ký",
       "admin_cleanup_conversation_runs": "Quản trị viên xóa dấu vết chạy hội thoại"
     }
-  },
-  "auth": {
-    "searchPlaceholder": "Tìm kiếm ID người dùng hoặc loại sự kiện",
-    "empty": "Không có nhật ký bảo mật đăng nhập nào"
-  },
-  "system": {
-    "searchPlaceholder": "Tìm kiếm nguồn, sự kiện, tài nguyên, request ID hoặc chi tiết",
-    "empty": "Không có sự kiện hệ thống nào"
   },
   "usage": {
     "searchPlaceholder": "Tìm kiếm ID người dùng, model nền tảng, model upstream, tên upstream, mã liên kết hoặc giao thức",
@@ -246,6 +120,134 @@
       }
     }
   },
+  "system": {
+    "searchPlaceholder": "Tìm kiếm nguồn, sự kiện, tài nguyên, request ID hoặc chi tiết",
+    "empty": "Không có sự kiện hệ thống nào"
+  },
+  "tabs": {
+    "audit": "Kiểm toán thao tác",
+    "usage": "Lượt gọi model",
+    "auth": "Bảo mật đăng nhập",
+    "orders": "Hồ sơ đơn hàng",
+    "redemptions": "Đổi thưởng",
+    "conversation": "Sự kiện hội thoại",
+    "moderation": "Sự kiện kiểm duyệt",
+    "system": "Sự kiện hệ thống"
+  },
+  "cleanup": {
+    "trigger": "Dọn dẹp nhật ký",
+    "title": "Dọn dẹp nhật ký lịch sử",
+    "description": "Dữ liệu trước 00:00 của ngày đã chọn sẽ bị xóa vĩnh viễn. Hành động này không thể hoàn tác.",
+    "typeLabel": "Loại nhật ký",
+    "dateLabel": "Ngày cắt",
+    "datePlaceholder": "Chọn một ngày",
+    "impactTitle": "Tác động",
+    "highRisk": "Rủi ro cao",
+    "boundary": "Dữ liệu trước {date} 00:00 sẽ bị xóa. Dữ liệu từ ngày đã chọn không bị ảnh hưởng.",
+    "confirm": "Dọn dẹp",
+    "deleting": "Đang dọn dẹp",
+    "types": {
+      "audit": "Kiểm toán thao tác",
+      "auth": "Bảo mật đăng nhập",
+      "usage": "Lượt gọi model",
+      "orders": "Hồ sơ đơn hàng",
+      "conversation": "Sự kiện hội thoại",
+      "system": "Sự kiện hệ thống"
+    },
+    "impacts": {
+      "audit": "Chỉ xóa các bản ghi theo dõi thao tác. Người dùng, hội thoại và dữ liệu nghiệp vụ khác không bị xóa.",
+      "auth": "Xóa lịch sử sự kiện đăng nhập, xác thực hai yếu tố, mật khẩu và các sự kiện bảo mật khác. Các phiên đang hoạt động và thông tin xác thực không bị thay đổi.",
+      "usage": "Xóa sổ ghi mức sử dụng và chi phí. Mức sử dụng theo ngày/tháng trong quá khứ, tính toán hạn mức chu kỳ hiện tại và khả năng truy vết thanh toán bị ảnh hưởng, và các khoảng thời gian đã xóa có thể hiển thị hạn mức tiêu thụ thấp hơn.",
+      "orders": "Xóa đơn hàng thanh toán và dữ liệu đối chiếu callback. Số dư và gói đăng ký đã cấp không bị thu hồi, nhưng các callback cũ có thể lỗi và khả năng truy vết thanh toán cùng bằng chứng idempotency bị mất.",
+      "conversation": "Xóa dấu vết xử lý tin nhắn, lệnh gọi công cụ và sự kiện chạy. Hội thoại và nội dung tin nhắn được giữ lại, nhưng chi tiết xử lý và công cụ trong quá khứ có thể không còn hiển thị.",
+      "system": "Xóa các sự kiện chẩn đoán và xử lý sự cố. Cấu hình hệ thống và trạng thái vận hành hiện tại không bị thay đổi."
+    },
+    "toast": {
+      "sessionExpired": "Phiên đăng nhập đã hết hạn",
+      "signInAgain": "Vui lòng đăng nhập lại trước khi tiếp tục.",
+      "success": "Dọn dẹp nhật ký hoàn tất. Đã xóa {count} bản ghi",
+      "failed": "Dọn dẹp nhật ký thất bại"
+    }
+  },
+  "toast": {
+    "sessionExpired": "Phiên đăng nhập đã hết hạn",
+    "signInAgain": "Vui lòng đăng nhập lại trước khi tiếp tục.",
+    "auditLoadFailed": "Tải nhật ký kiểm toán thất bại",
+    "authLoadFailed": "Tải nhật ký bảo mật đăng nhập thất bại",
+    "systemLoadFailed": "Tải sự kiện hệ thống thất bại",
+    "usageLoadFailed": "Tải nhật ký sử dụng thất bại",
+    "ordersLoadFailed": "Tải hồ sơ đơn hàng thất bại",
+    "redemptionsLoadFailed": "Không thể tải bản ghi đổi thưởng",
+    "conversationEventsLoadFailed": "Tải sự kiện hội thoại thất bại",
+    "conversationEventDetailLoadFailed": "Tải chi tiết sự kiện hội thoại thất bại",
+    "modelFilterLoadFailed": "Tải bộ lọc model thất bại"
+  },
+  "sort": {
+    "idDesc": "ID mới nhất trước",
+    "idAsc": "ID cũ nhất trước",
+    "createdDesc": "Tạo mới nhất trước",
+    "createdAsc": "Tạo cũ nhất trước",
+    "occurredDesc": "Xảy ra mới nhất trước",
+    "occurredAsc": "Xảy ra cũ nhất trước",
+    "callTimeDesc": "Thời điểm gọi mới nhất trước",
+    "callTimeAsc": "Thời điểm gọi cũ nhất trước",
+    "costDesc": "Chi phí giảm dần",
+    "tokensDesc": "Token giảm dần",
+    "latencyDesc": "Độ trễ giảm dần",
+    "paidDesc": "Thanh toán mới nhất trước",
+    "amountDesc": "Số tiền giảm dần",
+    "sequenceAsc": "Trình tự sự kiện cũ nhất trước"
+  },
+  "filters": {
+    "allResources": "Tất cả",
+    "allActions": "Tất cả",
+    "allSources": "Tất cả",
+    "allEvents": "Tất cả",
+    "allResults": "Tất cả",
+    "allLevels": "Tất cả",
+    "timeRange": "Khoảng thời gian",
+    "levels": {
+      "info": "Thông tin",
+      "warn": "Cảnh báo",
+      "error": "Lỗi"
+    }
+  },
+  "columns": {
+    "actor": "Đối tượng thực hiện",
+    "action": "Hành động",
+    "resource": "Tài nguyên",
+    "time": "Thời gian",
+    "requestID": "Request ID",
+    "user": "Người dùng",
+    "event": "Sự kiện",
+    "result": "Kết quả",
+    "reason": "Lý do",
+    "level": "Mức",
+    "source": "Nguồn",
+    "message": "Thông điệp",
+    "caller": "Bên gọi",
+    "model": "Model",
+    "usage": "Sử dụng",
+    "billing": "Thanh toán",
+    "balanceAfter": "Số dư sau tất toán",
+    "latency": "Độ trễ",
+    "orderNo": "Số đơn hàng",
+    "type": "Loại",
+    "provider": "Nhà cung cấp",
+    "status": "Trạng thái",
+    "upstream": "Upstream",
+    "amount": "Số tiền",
+    "scope": "Phạm vi",
+    "tool": "Công cụ",
+    "runID": "Run ID",
+    "code": "Mã",
+    "reward": "Nội dung đổi thưởng",
+    "balanceAfterRedemption": "Số dư sau đổi"
+  },
+  "auth": {
+    "searchPlaceholder": "Tìm kiếm ID người dùng hoặc loại sự kiện",
+    "empty": "Không có nhật ký bảo mật đăng nhập nào"
+  },
   "orders": {
     "searchPlaceholder": "Tìm kiếm ID người dùng, số đơn hàng, nhà cung cấp, trạng thái hoặc ID thanh toán ngoài",
     "empty": "Không có hồ sơ đơn hàng nào",
@@ -264,6 +266,25 @@
       "paid": "Đã thanh toán",
       "expired": "Đã hết hạn",
       "failed": "Thất bại"
+    }
+  },
+  "redemptions": {
+    "searchPlaceholder": "Tìm mã tham chiếu, gợi ý mã hoặc ghi chú",
+    "empty": "Chưa có bản ghi đổi thưởng",
+    "filters": {
+      "all": "Tất cả",
+      "rewardType": "Loại phần thưởng",
+      "codeID": "ID mã",
+      "codeIDPlaceholder": "Nhập ID mã",
+      "userID": "ID người dùng",
+      "userIDPlaceholder": "Nhập ID người dùng",
+      "clearCodeID": "Xóa ID mã",
+      "clearUserID": "Xóa ID người dùng"
+    },
+    "rewards": {
+      "balance": "Số dư",
+      "subscription": "Gói đăng ký",
+      "durationDays": "{count} ngày"
     }
   },
   "conversation": {
@@ -304,6 +325,7 @@
       "auth": "Chi tiết nhật ký bảo mật đăng nhập",
       "usage": "Chi tiết nhật ký sử dụng",
       "order": "Chi tiết hồ sơ đơn hàng",
+      "redemption": "Chi tiết bản ghi đổi thưởng",
       "conversation": "Chi tiết sự kiện hội thoại",
       "system": "Chi tiết sự kiện hệ thống"
     },
@@ -311,6 +333,7 @@
       "authEvent": "Sự kiện đăng nhập",
       "modelCall": "Lượt gọi model",
       "order": "Hồ sơ đơn hàng",
+      "redemption": "Bản ghi đổi thưởng",
       "conversationEvent": "Sự kiện hội thoại",
       "systemEvent": "Sự kiện hệ thống",
       "auditEvent": "Sự kiện kiểm toán"
@@ -326,8 +349,20 @@
       "usageBilling": "Thanh toán sử dụng",
       "order": "Đơn hàng",
       "payment": "Thanh toán",
+      "redemption": "Đổi thưởng",
+      "redemptionCode": "Mã đổi thưởng",
+      "reward": "Phần thưởng",
       "conversationEvent": "Sự kiện hội thoại",
       "tool": "Công cụ"
+    },
+    "codeStatus": {
+      "active": "Đang bật",
+      "inactive": "Đã tắt",
+      "deleted": "Đã xóa"
+    },
+    "rewardTypes": {
+      "balance": "Số dư",
+      "subscription": "Gói đăng ký"
     },
     "fields": {
       "action": "Hành động",
@@ -372,6 +407,18 @@
       "eventScope": "Phạm vi sự kiện",
       "stage": "Giai đoạn",
       "seq": "STT",
+      "refNo": "Mã tham chiếu đổi thưởng",
+      "redeemedAt": "Thời điểm đổi",
+      "codeHint": "Mã",
+      "codeID": "ID mã",
+      "codeDescription": "Ghi chú mã",
+      "codeStatus": "Trạng thái mã",
+      "rewardType": "Loại phần thưởng",
+      "planName": "Gói đăng ký",
+      "subscriptionID": "ID đăng ký",
+      "balanceBefore": "Số dư trước khi đổi",
+      "balanceAfterRedemption": "Số dư sau khi đổi",
+      "durationDays": "Thời hạn gói",
       "messageID": "Message ID",
       "toolName": "Tên công cụ",
       "toolCallID": "Tool call ID",
@@ -384,10 +431,18 @@
       "failure": "Thất bại",
       "blocked": "Bị chặn"
     },
+    "rewardDurationDays": "{count} ngày",
     "rawUsageJsonTitle": "JSON Usage thô",
     "jsonTitle": "JSON chi tiết",
+    "jsonFields": {
+      "payload": "Payload sự kiện",
+      "input": "Đầu vào công cụ",
+      "output": "Đầu ra công cụ",
+      "error": "Lỗi công cụ"
+    },
     "loading": "Đang tải chi tiết",
-    "payloadOmitted": "Payload lịch sử này có dung lượng {size}, vượt giới hạn xem an toàn nên nội dung đã bị bỏ qua. Xóa các dấu vết chạy liên quan để loại bỏ dữ liệu lịch sử bất thường này.",
+    "jsonEmpty": "Sự kiện này không có chi tiết JSON để hiển thị",
+    "jsonOmitted": "{label} có dung lượng {size}, vượt giới hạn xem an toàn nên nội dung chưa được tải.",
     "copied": "Đã sao chép {label}",
     "copyFailed": "Sao chép thất bại"
   },

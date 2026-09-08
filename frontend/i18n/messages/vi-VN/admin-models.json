@@ -19,6 +19,7 @@
     "protocol": "Protocol",
     "vendor": "Nhà cung cấp",
     "displayGroup": "Nhóm hiển thị",
+    "contextWindow": "Cửa sổ ngữ cảnh",
     "kind": "Loại"
   },
   "status": {
@@ -128,6 +129,7 @@
   "bulkConfirm": {
     "title": "Xác nhận cập nhật hàng loạt",
     "description": "Áp dụng cập nhật hàng loạt này cho {count} mục đã chọn.",
+    "contextWindowDescription": "Đặt cửa sổ ngữ cảnh {value} token cho {count} model đã chọn.",
     "confirm": "Áp dụng",
     "pending": "Đang áp dụng"
   },
@@ -228,6 +230,13 @@
     "bulkDisplayGroupUpdated": "Đã cập nhật nhóm hiển thị cho {count} model",
     "bulkDisplayGroupPartialFailed": "Một số nhóm hiển thị model chưa được cập nhật",
     "bulkDisplayGroupFailed": "Không cập nhật được nhóm hiển thị model",
+    "bulkContextWindowInvalid": "Nhập số nguyên từ 4.096 đến 16.000.000",
+    "bulkContextWindowInvalidCapabilities": "Cấu hình khả năng của model \"{name}\" không phải JSON hợp lệ",
+    "bulkContextWindowOutputConflict": "Giới hạn đầu ra {max, number} token của model \"{name}\" phải nhỏ hơn cửa sổ ngữ cảnh",
+    "bulkContextWindowAlreadyApplied": "Các model đã chọn đang dùng cửa sổ ngữ cảnh này",
+    "bulkContextWindowUpdated": "Đã cập nhật cửa sổ ngữ cảnh cho {count} model",
+    "bulkContextWindowPartialFailed": "Một số cửa sổ ngữ cảnh của model không cập nhật được",
+    "bulkContextWindowFailed": "Không thể cập nhật cửa sổ ngữ cảnh của model",
     "bulkStatusAlreadyApplied": "Các model đã chọn đã ở trạng thái này",
     "bulkStatusUpdated": "Đã cập nhật trạng thái cho {count} model",
     "bulkStatusPartialFailed": "Một số trạng thái model chưa được cập nhật",
@@ -381,6 +390,13 @@
     "capabilities": "Khả năng của model",
     "capabilitiesJSON": "JSON khả năng của model",
     "capabilitiesDescription": "Cấu hình tham số mặc định của model và các điều khiển hiển thị trong bảng tham số chat.",
+    "contextWindow": "Cửa sổ ngữ cảnh",
+    "contextWindowAuto": "Tự nhận diện",
+    "contextWindowCustom": "Tuỳ chỉnh",
+    "contextWindowPresets": "Chọn cửa sổ ngữ cảnh phổ biến",
+    "contextWindowInvalid": "Nhập số nguyên từ 4.096 đến 16.000.000.",
+    "contextWindowDescription": "Số token tối đa model có thể xử lý trong một yêu cầu.",
+    "contextWindowEffective": "Đang hiệu lực: {value} token",
     "circuitBreak": "Circuit breaker của model",
     "circuitBreakDescription": "Cấu hình quy tắc circuit breaker cho các nguồn upstream của model này. Quy tắc áp dụng khi bật circuit breaker tự động; lỗi và trạng thái circuit được theo dõi riêng cho từng nguồn, giá trị 0 nghĩa là kế thừa mặc định của hệ thống.",
     "circuitPolicyMode": "Chế độ áp dụng",

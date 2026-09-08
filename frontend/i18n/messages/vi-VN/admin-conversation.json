@@ -1,7 +1,7 @@
 {
   "sections": {
     "conversation": "Cài đặt hội thoại",
-    "contextCompression": "Nén ngữ cảnh",
+    "contextManagement": "Quản lý ngữ cảnh",
     "optionPassthrough": "Truyền tùy chọn",
     "dataExport": "Xuất dữ liệu"
   },
@@ -43,10 +43,15 @@
       "description": "Kích hoạt nén ngữ cảnh khi hội thoại vượt quá số lượt này. Đặt 0 để tắt điều kiện này.",
       "placeholder": "Số lượt kích hoạt"
     },
-    "contextCompactTriggerTokens": {
-      "label": "Ngưỡng token kích hoạt nén",
-      "description": "Kích hoạt nén ngữ cảnh khi tổng token của tin nhắn vượt quá giá trị này. Đặt 0 để tắt điều kiện này.",
-      "placeholder": "Ngưỡng token"
+    "contextWindowFallbackTokens": {
+      "label": "Cửa sổ ngữ cảnh mặc định",
+      "description": "Dùng khi không xác định được cửa sổ ngữ cảnh của model.",
+      "placeholder": "Mặc định 128000"
+    },
+    "contextCompactTriggerPercent": {
+      "label": "Tỷ lệ kích hoạt nén",
+      "description": "Kích hoạt nén khi ngữ cảnh tích lũy đạt tỷ lệ này so với ngân sách đầu vào hiệu lực của model đang dùng. Đặt 0 để tắt điều kiện kích hoạt theo token.",
+      "placeholder": "Mặc định 80"
     },
     "contextCompactPreserveTurns": {
       "label": "Số lượt gần đây được giữ nguyên",

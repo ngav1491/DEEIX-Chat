@@ -373,6 +373,10 @@
       "sectionTitle": "Hiển thị và kết xuất",
       "markdownTitle": "Kết xuất Markdown",
       "markdownDescription": "Kiểm soát việc phản hồi AI có được kết xuất dưới dạng Markdown có định dạng hay không.",
+      "autoExpandThinkingTitle": "Tự mở rộng suy nghĩ sâu",
+      "autoExpandThinkingDescription": "Tự động mở rộng bước suy nghĩ đang chạy khi tạo phản hồi.",
+      "autoExpandToolCallsTitle": "Tự mở rộng lượt gọi công cụ",
+      "autoExpandToolCallsDescription": "Tự động mở rộng lượt gọi công cụ đang chạy.",
       "modelTitle": "Hiển thị model được gọi",
       "modelDescription": "Kiểm soát việc hiển thị model đã dùng cho lượt gọi bên dưới các phản hồi AI.",
       "tokenTitle": "Hiển thị mức dùng token",
@@ -492,12 +496,32 @@
     },
     "usageBilling": {
       "title": "Thanh toán theo mức dùng",
-      "balance": "Số dư tài khoản {value}",
+      "balanceLabel": "Số dư tài khoản",
+      "totalSpentLabel": "Tổng đã chi",
       "topUp": "Nạp tiền"
     },
     "selfMode": {
       "title": "Chế độ thanh toán",
       "value": "Chế độ tự dùng"
+    },
+    "activity": {
+      "title": "Hoạt động trong năm qua",
+      "tokens": "Token",
+      "requests": "Yêu cầu",
+      "peakDayTokens": "Token theo ngày cao nhất",
+      "currentStreak": "Chuỗi hiện tại",
+      "longestStreak": "Chuỗi dài nhất",
+      "totalActiveDays": "Ngày hoạt động",
+      "dayCount": "{count, plural, one {# ngày} other {# ngày}}",
+      "totalRequests": "Đã gửi {count} yêu cầu model trong năm qua",
+      "less": "Ít",
+      "more": "Nhiều",
+      "empty": "Không có hoạt động trong năm qua",
+      "loadFailed": "Không thể tải hoạt động",
+      "tooltip": {
+        "requests": "Yêu cầu",
+        "tokens": "Token"
+      }
     },
     "usageTrend": {
       "dailyTitle": "Xu hướng mức dùng theo ngày",
@@ -509,7 +533,8 @@
       "otherModels": "Khác",
       "empty": "Không có dữ liệu mức dùng.",
       "metrics": {
-        "totalCost": "Tổng chi phí",
+        "periodCost": "Chi phí kỳ này",
+        "yearCost": "Chi phí 12 tháng",
         "totalTokens": "Tổng token",
         "totalCalls": "Tổng số lượt gọi",
         "averageLatency": "Độ trễ trung bình"

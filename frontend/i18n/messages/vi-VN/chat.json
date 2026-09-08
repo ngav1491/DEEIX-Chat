@@ -2,6 +2,7 @@
   "newChat": "Trò chuyện mới",
   "untitledConversation": "Trò chuyện mới",
   "modelListLoadFailed": "Không thể tải danh sách model.",
+  "projectDefaultModelUnavailable": "Model mặc định của dự án \"{model}\" hiện không khả dụng. Hệ thống sẽ dùng model mặc định toàn cục.",
   "placeholder": "Nhắn tin với DEEIX Chat",
   "projectMode": "Chế độ dự án",
   "projectModeTooltip": "Trong chế độ này, các cuộc trò chuyện mới được tạo trong dự án hiện tại. Hướng dẫn của dự án chỉ áp dụng cho các yêu cầu chat với model; tạo ảnh, chỉnh sửa ảnh và các tính năng không phải chat khác không sử dụng chúng.",
@@ -15,6 +16,19 @@
   "time": "Thời gian",
   "tokens": "Token",
   "details": "Chi tiết",
+  "temporary": {
+    "title": "Trò chuyện tạm thời",
+    "historyChat": "Trò chuyện thường",
+    "notice": "Trò chuyện này sẽ không xuất hiện trong lịch sử. Dữ liệu sẽ bị xóa khi bạn rời trang.",
+    "exitTitle": "Thoát trò chuyện tạm thời",
+    "exitDescription": "Mọi tin nhắn và nội dung được tạo trong trò chuyện tạm thời này sẽ bị xóa và không thể khôi phục.",
+    "continue": "Hủy",
+    "exitAction": "Thoát",
+    "stopped": "Đã dừng tạo phản hồi",
+    "blocked": "Nội dung đã bị thu hồi theo chính sách an toàn",
+    "failed": "Tạo tin nhắn tạm thời thất bại. Vui lòng thử lại.",
+    "sessionExpired": "Phiên của bạn đã hết hạn. Vui lòng đăng nhập lại."
+  },
   "greeting": {
     "morning": "Chào buổi sáng",
     "afternoon": "Chào buổi chiều",
@@ -91,18 +105,18 @@
     "delete": "Xóa"
   },
   "screenshot": {
-    "captureFull": "Chụp toàn bộ cuộc trò chuyện",
+    "captureLatest": "Chụp 100 tin nhắn gần nhất",
     "captureSelect": "Chọn tin nhắn để chụp",
     "selectMessage": "Chọn tin nhắn này",
-    "selectedCount": "Đã chọn {count}",
     "selectAll": "Chọn tất cả",
+    "selectLatest": "Chọn 100 tin gần nhất",
     "clearSelection": "Bỏ chọn tất cả",
     "captureSelected": "Chụp",
     "exitSelection": "Thoát chế độ chọn",
     "generating": "Đang tạo ảnh chụp…",
     "ready": "Ảnh chụp đã sẵn sàng",
     "failed": "Không thể tạo ảnh chụp",
-    "loadLimitReached": "Cuộc trò chuyện quá dài. Vui lòng chọn một phần tin nhắn để chụp màn hình.",
+    "selectionLimitReached": "Bạn chỉ có thể chọn tối đa 100 tin nhắn",
     "tooLarge": "Nội dung cuộc trò chuyện quá lớn. Vui lòng chọn một phần tin nhắn để chụp màn hình.",
     "emptySelection": "Hãy chọn ít nhất một tin nhắn",
     "previewTitle": "Ảnh chụp cuộc trò chuyện",
@@ -124,6 +138,14 @@
     "downloadImage": "Tải ảnh xuống",
     "scrollableTable": "Bảng dữ liệu có thể cuộn ngang",
     "scrollableTableHint": "Cuộn ngang để xem thêm các cột.",
+    "table": {
+      "download": "Tải xuống",
+      "downloadAsCsv": "Tải CSV",
+      "downloadAsMarkdown": "Tải Markdown",
+      "formatCsv": "CSV",
+      "formatMarkdown": "Markdown",
+      "downloadFailed": "Không thể tải bảng"
+    },
     "copyLatex": "Sao chép mã công thức",
     "latexCopied": "Đã sao chép mã công thức",
     "latexCopyFailed": "Không thể sao chép mã công thức",
@@ -134,10 +156,6 @@
       "copy": "Sao chép liên kết",
       "copied": "Đã sao chép liên kết",
       "copyFailed": "Không thể sao chép liên kết"
-    },
-    "codeBlock": {
-      "collapse": "Thu gọn",
-      "expand": "Mở rộng {count} dòng"
     },
     "artifact": {
       "openPreview": "Xem trước",
@@ -160,7 +178,13 @@
       "downloadDiagram": "Tải sơ đồ xuống",
       "downloadDiagramAsSvg": "Tải sơ đồ dạng SVG",
       "downloadDiagramAsPng": "Tải sơ đồ dạng PNG",
-      "downloadDiagramAsMmd": "Tải sơ đồ dạng MMD"
+      "downloadDiagramAsMmd": "Tải sơ đồ dạng MMD",
+      "copyDiagram": "Sao chép",
+      "viewFullscreen": "Toàn màn hình",
+      "exitFullscreen": "Thoát",
+      "zoomIn": "Phóng to",
+      "zoomOut": "Thu nhỏ",
+      "resetView": "Đặt lại khung nhìn"
     }
   },
   "artifacts": {
@@ -254,6 +278,7 @@
     "dropTitle": "Thả tệp vào đây để đính kèm",
     "duplicateReused": "Phát hiện tệp trùng lặp và đã tái sử dụng",
     "partialUploadFailed": "Một số tệp tải lên thất bại",
+    "temporaryVideoUnsupported": "Trò chuyện tạm thời hiện hỗ trợ tệp đính kèm ảnh và tài liệu, chưa hỗ trợ video.",
     "retryFailedFiles": "Vui lòng thử lại với các tệp bị lỗi.",
     "retryLater": "Vui lòng thử lại sau.",
     "screenshotUnsupported": "Trình duyệt này không hỗ trợ chụp màn hình",
@@ -300,6 +325,8 @@
     },
     "generationInterrupted": "Việc tạo phản hồi bị gián đoạn",
     "sendFailed": "Gửi thất bại",
+    "queuedParentFailed": "Đã hủy tin nhắn trong hàng đợi",
+    "queuedParentFailedDescription": "Tin nhắn trước đó không hoàn tất thành công, nên các tin nhắn hàng đợi phụ thuộc đã bị hủy.",
     "continueGenerationPrompt": "Tiếp tục từ phản hồi bị gián đoạn trước đó mà không lặp lại nội dung đã tạo.",
     "continueReplyFailed": "Không thể tiếp tục tạo phản hồi",
     "continueReplyUnavailable": "Hiện không thể tiếp tục phản hồi này.",
@@ -311,7 +338,8 @@
     "moderationBlocked": "Nội dung bị chặn",
     "moderationBlockedDescription": "Phản hồi này đã bị thu hồi sau khi kiểm tra an toàn.",
     "moderationEventId": "ID sự kiện: {id}",
-    "moderationCategories": "Danh mục: {categories}"
+    "moderationCategories": "Danh mục: {categories}",
+    "moderationBlockedBilled": "Mức dùng upstream phát sinh trước khi bị chặn vẫn được tính phí như bình thường."
   },
   "data": {
     "signInRequired": "Hãy đăng nhập trước khi tải tin nhắn của cuộc trò chuyện.",
@@ -381,6 +409,7 @@
     "knowledgeBaseNotReady": "Chưa có tệp nào có thể tìm kiếm",
     "knowledgeBaseEmpty": "Không có cơ sở tri thức nào",
     "knowledgeBaseLoadFailed": "Không thể tải cơ sở tri thức",
+    "knowledgeBaseLoadMore": "Tải thêm",
     "knowledgeBaseUnavailable": "Truy xuất cơ sở tri thức không khả dụng",
     "knowledgeBaseUnavailableDescription": "Hãy nhờ quản trị viên kiểm tra cấu hình RAG và embedding.",
     "knowledgeBaseUnavailableRAGDisabled": "RAG đang bị tắt. Hãy nhờ quản trị viên bật RAG.",
@@ -422,6 +451,7 @@
     "closeHint": "Đóng gợi ý",
     "previewAttachment": "Xem trước tệp đính kèm {name}",
     "removeAttachment": "Xóa tệp đính kèm {name}",
+    "uploading": "Đang tải lên",
     "uploadingAttachment": "Đang tải lên {name}",
     "ragDisabledTitle": "Tệp này tắt RAG và sẽ được chèn dưới dạng toàn ngữ cảnh. Có thể dùng nhiều token hơn.",
     "ragOff": "Tắt RAG",
@@ -439,6 +469,8 @@
     "mcpToolLimitTitle": "Đã đạt giới hạn công cụ",
     "mcpToolLimitDescription": "Mỗi tin nhắn dùng được tối đa {limit} công cụ MCP. Hãy bỏ bớt công cụ trước khi chọn thêm.",
     "mcpImageProcessor": "Bộ xử lý tệp ảnh đính kèm",
+    "mcpPaidTool": "Tính phí {price} mỗi lượt gọi.",
+    "mcpPaidToolNote": "Chỉ các lượt gọi công cụ thực thi thành công mới bị tính phí; lượt gọi thất bại không bị tính phí.",
     "mcpImageProcessorLimitTitle": "Chỉ được chọn một bộ xử lý ảnh",
     "mcpImageProcessorLimitDescription": "Mỗi tin nhắn chỉ có một bộ xử lý ảnh đính kèm MCP xử lý ảnh. Hãy xóa bộ xử lý hiện tại trước.",
     "skillLimitTitle": "Đã đạt giới hạn skill",
@@ -493,6 +525,28 @@
         "model": "Model",
         "skill": "Skill",
         "prompt": "Prompt"
+      },
+      "tabs": {
+        "all": "Tất cả",
+        "file": "Tệp",
+        "tool": "MCP",
+        "model": "Model",
+        "skill": "Skills",
+        "prompt": "Prompts"
+      },
+      "recent": "Gần đây",
+      "groups": {
+        "builtin": "Có sẵn",
+        "mine": "Của tôi"
+      },
+      "viewAll": "Xem tất cả {count}",
+      "empty": {
+        "all": "Không có kết quả phù hợp",
+        "file": "Không có tệp phù hợp",
+        "tool": "Không có công cụ phù hợp",
+        "model": "Không có model phù hợp",
+        "skill": "Không có skill phù hợp",
+        "prompt": "Không có prompt phù hợp"
       }
     },
     "mediaMode": {
@@ -612,56 +666,44 @@
         "codeInterpreter": "Thông dịch mã",
         "imageGeneration": "Tạo ảnh",
         "shell": "Shell",
-        "generic": "Gọi công cụ",
-        "thinking": "Model đang suy nghĩ"
+        "generic": "Gọi công cụ"
       },
       "detail": {
+        "nameLabel": "Công cụ",
         "request": "Yêu cầu",
         "response": "Phản hồi",
         "error": "Lỗi",
-        "expand": "Mở rộng",
-        "collapse": "Thu gọn",
+        "argumentsTitle": "Tham số",
+        "resultTitle": "Kết quả",
+        "copy": "Sao chép",
+        "copied": "Đã sao chép",
+        "copyFailed": "Sao chép thất bại",
         "sourceFallback": "Nguồn {index}",
         "generatedImageAlt": "Ảnh đã tạo {index}",
-        "query": "Truy vấn",
-        "action": "Hành động",
-        "source": "Nguồn",
-        "code": "Mã",
-        "output": "Kết quả",
-        "resultFile": "Tệp kết quả",
-        "prompt": "Prompt",
-        "command": "Lệnh",
-        "latencySeparator": "; "
-      },
-      "nativeStatus": {
-        "webSearchActive": "Đang tìm kiếm web",
-        "webSearchDone": "Hoàn tất tìm kiếm web",
-        "webSearchFailed": "Tìm kiếm web thất bại",
-        "codeActive": "Đang chạy mã",
-        "codeDone": "Hoàn tất chạy mã",
-        "codeFailed": "Chạy mã thất bại",
-        "imageActive": "Đang tạo ảnh",
-        "imageDone": "Hoàn tất tạo ảnh",
-        "imageFailed": "Tạo ảnh thất bại",
-        "shellActive": "Đang chạy lệnh shell",
-        "shellDone": "Hoàn tất lệnh shell",
-        "shellFailed": "Lệnh shell thất bại",
-        "genericActive": "Đang gọi công cụ",
-        "genericDone": "Hoàn tất gọi công cụ",
-        "genericFailed": "Gọi công cụ thất bại"
-      },
-      "chain": {
-        "titleActive": "Đang gọi công cụ",
-        "titleDone": "Lượt gọi công cụ",
-        "summaryCount": "{count} lượt gọi công cụ",
-        "summaryFallback": "Lượt gọi công cụ"
+        "sourceCount": "{count} nguồn",
+        "groundingSupportCount": "{count} căn cứ trích dẫn",
+        "exitCode": "Mã thoát {code}",
+        "viewFullResult": "Xem kết quả đầy đủ",
+        "fullResultTitle": "Kết quả công cụ đầy đủ",
+        "loadingFullResult": "Đang tải kết quả đầy đủ",
+        "fullResultLoadFailed": "Không thể tải kết quả đầy đủ. Vui lòng thử lại sau.",
+        "fullResultOmitted": "Kết quả này có dung lượng {size}, vượt giới hạn xem an toàn nên chưa được tải.",
+        "fullResultEmpty": "Lượt gọi công cụ này không trả về nội dung.",
+        "close": "Đóng"
       }
     },
     "think": {
-      "titleActive": "Đang suy nghĩ",
-      "titleDone": "Hoàn tất suy nghĩ",
-      "subtitleActive": "Đang phân tích yêu cầu và sắp xếp ngữ cảnh chính",
-      "subtitleDone": "Hoàn tất suy luận và tích hợp ngữ cảnh"
+      "rowActive": "Suy luận sâu",
+      "rowDone": "Suy luận sâu",
+      "duration": "{seconds}"
+    },
+    "run": {
+      "titleActive": "Đang chạy",
+      "titleDone": "Hoàn tất chạy",
+      "toolCalls": "{count} lượt gọi công cụ",
+      "thinkRounds": "{count} vòng suy luận sâu",
+      "duration": "{duration}",
+      "labelSeparator": " · "
     },
     "promptTrace": {
       "modes": {
@@ -703,7 +745,9 @@
       "summary": "Đã nén các lượt {fromTurn}-{toTurn}",
       "detail": "Ngữ cảnh trò chuyện đã được nén thành bản tóm tắt cuộn.",
       "range": "Dải đã nén: các lượt {fromTurn}-{toTurn}.",
-      "tokens": "Giảm token: {sourceTokens} -> {summaryTokens}."
+      "tokens": "Giảm token: {sourceTokens} -> {summaryTokens}.",
+      "pending": "Đang tạo tóm tắt cuộn ở nền.",
+      "failed": "Nén ngữ cảnh chưa hoàn tất và sẽ được thử lại ở yêu cầu sau."
     }
   },
   "optionLabels": {
