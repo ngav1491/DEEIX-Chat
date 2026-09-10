@@ -280,7 +280,10 @@ func (h *Handler) GetChatContextPolicy(c *gin.Context) {
 // @Router /settings/feature-policy [get]
 func (h *Handler) GetFeaturePolicy(c *gin.Context) {
 	cfg := h.runtime.Snapshot()
-	response.Success(c, FeaturePolicyResponse{KnowledgeBaseEnabled: cfg.KnowledgeBaseEnabled})
+	response.Success(c, FeaturePolicyResponse{
+		KnowledgeBaseEnabled: cfg.KnowledgeBaseEnabled,
+		UserAboutEnabled:     cfg.UserAboutEnabled,
+	})
 }
 
 // Patch godoc

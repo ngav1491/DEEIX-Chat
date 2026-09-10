@@ -55,7 +55,14 @@
     "blog": "Blog",
     "contact": "Liên hệ & hỗ trợ",
     "copyright": "© 2026 DEEIX. DEEIX Chat.",
-    "license": "Mã nguồn được cấp phép theo Apache License 2.0."
+    "license": "Mã nguồn được cấp phép theo Apache License 2.0.",
+    "userAboutToggle": {
+      "label": "Hiện Giới thiệu trong cài đặt người dùng",
+      "description": "Khi tắt, người dùng thường không thấy mục Giới thiệu. Liên kết trực tiếp sẽ chuyển về Cài đặt chung. Trang Giới thiệu phía quản trị không đổi.",
+      "enabledToast": "Đã hiện trang Giới thiệu cho người dùng",
+      "disabledToast": "Đã ẩn trang Giới thiệu khỏi người dùng",
+      "saveFailed": "Không thể lưu hiển thị Giới thiệu"
+    }
   },
   "accessDeniedTitle": "Dịch vụ không khả dụng",
   "accessDeniedDescription": "Bạn không có quyền truy cập trang này",

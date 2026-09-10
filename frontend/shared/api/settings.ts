@@ -18,6 +18,7 @@ export type ChatContextPolicy = {
 
 export type FeaturePolicy = {
   knowledgeBaseEnabled: boolean;
+  userAboutEnabled: boolean;
 };
 
 export async function getModelOptionPolicy(accessToken: string): Promise<ModelOptionPolicy> {
@@ -54,9 +55,13 @@ export async function getChatContextPolicy(accessToken: string): Promise<ChatCon
 }
 
 export async function getFeaturePolicy(accessToken: string): Promise<FeaturePolicy> {
-  return authedRequest<FeaturePolicy>(
+  const data = await authedRequest<Partial<FeaturePolicy>>(
     "/api/v1/settings/feature-policy",
     { accessToken },
     true,
   );
+  return {
+    knowledgeBaseEnabled: data.knowledgeBaseEnabled !== false,
+    userAboutEnabled: data.userAboutEnabled === true,
+  };
 }

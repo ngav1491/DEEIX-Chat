@@ -55,7 +55,14 @@
     "blog": "博客",
     "contact": "联系与支持",
     "copyright": "© 2026 DEEIX. DEEIX Chat.",
-    "license": "代码遵循 Apache License 2.0 授权。"
+    "license": "代码遵循 Apache License 2.0 授权。",
+    "userAboutToggle": {
+      "label": "在用户设置中显示关于页",
+      "description": "关闭后，普通用户设置中不再显示关于入口，直接访问会跳转到通用设置。管理端关于页不受影响。",
+      "enabledToast": "已向用户显示关于页",
+      "disabledToast": "已对用户隐藏关于页",
+      "saveFailed": "保存关于页可见性失败"
+    }
   },
   "accessDeniedTitle": "服务加载失败",
   "accessDeniedDescription": "您无权访问此页面",

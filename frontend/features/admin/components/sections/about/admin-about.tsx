@@ -1,8 +1,9 @@
 "use client";
 
-import { useSyncExternalStore, useState } from "react";
+import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
 import { CircleArrowUp, RefreshCw } from "lucide-react";
+import { toast } from "sonner";
 
 import packageMeta from "@/package.json";
 import { Button } from "@/components/ui/button";
@@ -27,7 +28,13 @@ import {
   type ReleaseInfo,
   writeCachedLatestRelease,
 } from "@/features/admin/model/update-check";
+import { Switch } from "@/components/ui/switch";
+import { listAdminSettingsByNamespace, patchAdminSettings } from "@/features/admin/api";
+import { resolveAdminErrorMessage } from "@/features/admin/utils/admin-error";
 import { AboutSettingsContent } from "@/shared/components/about-settings-content";
+import { SettingsFieldRow, SettingsSection } from "@/shared/components/settings-layout";
+import { resolveAccessToken } from "@/shared/auth/resolve-access-token";
+import { overrideFeaturePolicy } from "@/shared/hooks/use-feature-policy";
 import { useDialogSnapshot } from "@/shared/hooks/use-dialog-snapshot";
 import { cn } from "@/lib/utils";
 
@@ -194,6 +201,63 @@ function UpdateResultDialog({
   );
 }
 
+function AdminUserAboutToggle() {
+  const t = useTranslations("adminUsers.aboutPage.userAboutToggle");
+  const [enabled, setEnabled] = useState<boolean | null>(null);
+  const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      try {
+        const token = await resolveAccessToken();
+        if (!token) return;
+        const settings = await listAdminSettingsByNamespace(token, "ui");
+        if (cancelled) return;
+        setEnabled((settings.find((item) => item.key === "user_about_enabled")?.value ?? "false") === "true");
+      } catch {
+        // Keep unknown so the switch stays disabled until the current value is loaded.
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const toggle = useCallback(async (next: boolean) => {
+    const previous = enabled;
+    setSaving(true);
+    setEnabled(next);
+    try {
+      const token = await resolveAccessToken();
+      if (!token) throw new Error("missing access token");
+      await patchAdminSettings(token, {
+        items: [{ namespace: "ui", key: "user_about_enabled", value: String(next) }],
+      });
+      overrideFeaturePolicy({ userAboutEnabled: next });
+      toast.success(t(next ? "enabledToast" : "disabledToast"));
+    } catch (error) {
+      setEnabled(previous);
+      toast.error(resolveAdminErrorMessage(error, t("saveFailed")));
+    } finally {
+      setSaving(false);
+    }
+  }, [enabled, t]);
+
+  return (
+    <SettingsSection>
+      <SettingsFieldRow title={t("label")} description={t("description")} controlClassName="items-end">
+        <Switch
+          checked={enabled ?? false}
+          disabled={saving || enabled === null}
+          onCheckedChange={(checked) => void toggle(checked)}
+          aria-label={t("label")}
+        />
+      </SettingsFieldRow>
+    </SettingsSection>
+  );
+}
+
 export function AdminAboutPage() {
   const t = useTranslations("adminUsers.aboutPage");
   const cachedLatestRelease = useSyncExternalStore(
@@ -208,6 +272,7 @@ export function AdminAboutPage() {
       title={t("title")}
       description={t("description")}
       consoleLabel={t("adminConsole")}
+      leading={<AdminUserAboutToggle />}
       versionBadgeContent={<AdminAboutVersionBadge updateRelease={updateRelease} />}
       versionBadgeTooltip={<AdminUpdateTooltipContent updateRelease={updateRelease} />}
       versionActions={<AdminUpdateCheck />}

@@ -5,7 +5,10 @@ import * as React from "react";
 import { type FeaturePolicy, getFeaturePolicy } from "@/shared/api/settings";
 import { resolveAccessToken } from "@/shared/auth/resolve-access-token";
 
-const DEFAULT_FEATURE_POLICY: FeaturePolicy = { knowledgeBaseEnabled: true };
+const DEFAULT_FEATURE_POLICY: FeaturePolicy = {
+  knowledgeBaseEnabled: true,
+  userAboutEnabled: false,
+};
 
 let cachedFeaturePolicy: FeaturePolicy | null = null;
 let inflightFeaturePolicy: Promise<void> | null = null;
@@ -31,7 +34,7 @@ function loadFeaturePolicy(): Promise<void> {
       }
       setCachedFeaturePolicy(await getFeaturePolicy(token));
     } catch {
-      // 拉取失败按默认全部开启处理（fail-open），避免误伤正常部署或阻塞路由守卫。
+      // 拉取失败：知识库 fail-open，用户 About fail-closed，避免误开入口或阻塞路由守卫。
       setCachedFeaturePolicy(DEFAULT_FEATURE_POLICY);
     } finally {
       inflightFeaturePolicy = null;
@@ -51,7 +54,7 @@ function getFeaturePolicySnapshot(): FeaturePolicy | null {
 
 /**
  * 读取后台功能开关策略（会话级缓存，首次挂载时拉取一次，缓存更新时全量通知）。
- * 加载完成前返回默认全开，`loaded` 用于需要等待确定结果的场景（如路由守卫）。
+ * 加载完成前返回默认策略，`loaded` 用于需要等待确定结果的场景（如路由守卫）。
  */
 export function useFeaturePolicy(): FeaturePolicy & { loaded: boolean } {
   const policy = React.useSyncExternalStore(

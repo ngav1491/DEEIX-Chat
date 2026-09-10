@@ -55,7 +55,14 @@
     "blog": "Blog",
     "contact": "Contact & support",
     "copyright": "© 2026 DEEIX. DEEIX Chat.",
-    "license": "Code licensed under the Apache License 2.0."
+    "license": "Code licensed under the Apache License 2.0.",
+    "userAboutToggle": {
+      "label": "Show About in user settings",
+      "description": "When off, regular users do not see About in settings. Direct links redirect to General. The admin About page is unchanged.",
+      "enabledToast": "User About page enabled",
+      "disabledToast": "User About page hidden",
+      "saveFailed": "Failed to save About visibility"
+    }
   },
   "accessDeniedTitle": "Service unavailable",
   "accessDeniedDescription": "You are not allowed to access this page",

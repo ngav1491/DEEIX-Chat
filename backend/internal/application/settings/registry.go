@@ -161,6 +161,10 @@ var settingSpecs = []settingSpec{
 	{Namespace: "knowledgebase", Key: "enabled", ValueType: "bool", Default: "true", Description: "是否启用知识库功能；关闭后隐藏用户侧入口并拒绝知识库请求",
 		Validate: boolValue(), Apply: applyField(func(c *config.Config) *bool { return &c.KnowledgeBaseEnabled }, toBool)},
 
+	// 用户界面
+	{Namespace: "ui", Key: "user_about_enabled", ValueType: "bool", Default: "false", Description: "是否在用户设置中显示 About 页面；关闭后隐藏入口并将直链重定向到通用设置。管理端 About 不受影响",
+		Validate: boolValue(), Apply: applyField(func(c *config.Config) *bool { return &c.UserAboutEnabled }, toBool)},
+
 	// 存储配置
 	{Namespace: "storage", Key: "user_storage_quota_bytes", ValueType: "int", Default: "104857600", Description: "用户总存储配额（管理页面按 MB 输入，内部以字节保存），0表示不限制",
 		Validate: int64Min(0), Apply: applyField(func(c *config.Config) *int64 { return &c.UserStorageQuotaBytes }, toInt64)},

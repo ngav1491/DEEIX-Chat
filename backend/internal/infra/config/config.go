@@ -441,6 +441,8 @@ type Config struct {
 	ModelOptionDeniedPaths       string
 	// 知识库配置
 	KnowledgeBaseEnabled bool
+	// 用户设置 About 页：关闭后对普通用户隐藏入口并重定向。
+	UserAboutEnabled bool
 	// 存储配置
 	UserStorageQuotaBytes int64
 	MaxUploadFileBytes    int64
@@ -680,6 +682,7 @@ func Load() Config {
 		ModelOptionAllowedPaths:           DefaultModelOptionAllowedPathsJSON(),
 		ModelOptionDeniedPaths:            DefaultModelOptionDeniedPathsJSON(),
 		KnowledgeBaseEnabled:              true,
+		UserAboutEnabled:                  false,
 		UserStorageQuotaBytes:             104857600,
 		MaxUploadFileBytes:                20971520,
 		MaxMessageFiles:                   10,

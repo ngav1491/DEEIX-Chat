@@ -35,6 +35,7 @@ type AboutSettingsContentProps = {
   versionBadgeContent?: ReactNode;
   versionBadgeTooltip?: ReactNode;
   versionActions?: ReactNode;
+  leading?: ReactNode;
 };
 
 type AboutLinkItem = {
@@ -91,6 +92,7 @@ export function AboutSettingsContent({
   versionBadgeContent,
   versionBadgeTooltip,
   versionActions,
+  leading,
 }: AboutSettingsContentProps) {
   const links: AboutLinkItem[] = [
     {
@@ -133,6 +135,7 @@ export function AboutSettingsContent({
 
   return (
     <SettingsPage>
+      {leading}
       <SettingsSection title={title}>
         <div className="space-y-5 px-0.5">
           <div className="flex min-w-0 flex-col gap-2.5">
